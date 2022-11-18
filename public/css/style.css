@@ -23,5 +23,6 @@ header li{margin-left:10px;}
 
 .blog-posts{padding:25px;}
 .blog-posts article{border:1px solid #ccc;border-radius:var(--border-radius-sm);margin-bottom:25px}
+.blog-posts article a{text-decoration: none;}
 .blog-posts .hd{background:#ccc;padding:8px 20px;display:flex;justify-content: space-between;border-radius: var(--border-radius-sm);border-bottom-left-radius: 0;border-bottom-right-radius: 0}
 .blog-posts p{padding:20px;}

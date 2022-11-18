@@ -16,7 +16,7 @@ router.get("/",(req,res)=>{
         const postsHbsData = allpost.map(post=>post.get({plain:true}))
         // update the date format
         const postsdata = postsHbsData.map(post=>post.date = moment(post.createdAt).format('MM/DD/YYYY'));
-        // moment(hbsData.stars[i].updatedAt).format('YYYY-MM-DD');
+
         console.log(postsHbsData);
         res.render("home", {
             posts: postsHbsData,
@@ -64,5 +64,34 @@ router.get("/create-post",(req,res)=>{
     }
     res.render("createpost")
 })
+
+
+// GET one post
+router.get('/post/:id', async (req, res) => {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+          {
+            model: Comment,
+          },
+        ],
+      });
+
+      const postHbsData = postData.toJSON();
+      // update the date format
+      postHbsData.date = moment(postHbsData.updatedAt).format('MM/DD/YYYY') ;
+
+      console.log(postHbsData);
+      res.render('post', postHbsData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
 
 module.exports = router;
