@@ -1,4 +1,6 @@
-
+:root {
+    --border-radius-sm:10px;
+}
 .container{
     width:90%;
     margin:0 auto;
@@ -18,3 +20,8 @@ header li{margin-left:10px;}
     border:2px solid rgb(43, 43, 90);
 }
 .box-container h2{background-color:var()}
+
+.blog-posts{padding:25px;}
+.blog-posts article{border:1px solid #ccc;border-radius:var(--border-radius-sm);margin-bottom:25px}
+.blog-posts .hd{background:#ccc;padding:8px 20px;display:flex;justify-content: space-between;border-radius: var(--border-radius-sm);border-bottom-left-radius: 0;border-bottom-right-radius: 0}
+.blog-posts p{padding:20px;}

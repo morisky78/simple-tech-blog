@@ -1,10 +1,11 @@
-This is hope page
-{{#each object}}
+<div class="blog-posts">
+{{#each posts}}
 <article>
     <div class="hd">
         <h3>{{title}}</h3>
-        <span>{{createdAt}}</span>
+        <span>Posted by {{User.username}} on {{date}}</span>
     </div>
     <p>{{content}}</p>
 </article>
 {{/each}}
+</div>

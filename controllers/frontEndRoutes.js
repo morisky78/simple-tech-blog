@@ -1,15 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const {User,Post,Comment} = require('../models');
+const moment = require('moment-timezone');
 
 router.get("/",(req,res)=>{
 
-    Post.findAll().then(allpost=>{
+    Post.findAll({
+        include:[{
+            model:User,
+            attributes:['username'],
+        }],
+        
+    }).then(allpost=>{
 
         const postsHbsData = allpost.map(post=>post.get({plain:true}))
+        // update the date format
+        const postsdata = postsHbsData.map(post=>post.date = moment(post.createdAt).format('MM/DD/YYYY'));
+        // moment(hbsData.stars[i].updatedAt).format('YYYY-MM-DD');
         console.log(postsHbsData);
-        
-        res.render("home", postsHbsData)
+        res.render("home", {
+            posts: postsHbsData,
+        })
 
     })
 })
