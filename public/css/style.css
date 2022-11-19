@@ -34,16 +34,16 @@ header nav p{padding:5px;font-size:1.1em;}
 
 .blog-posts article a{text-decoration: none;}
 .blog-posts .hd{background: var(--border-color);padding:8px 20px;display:flex;justify-content: space-between;border-radius: 9px;border-bottom-left-radius: 0;border-bottom-right-radius: 0}
-.blog-posts .hd span{color:rgb(214, 214, 214);font-size:0.8em;margin-top:3px;}
+.blog-posts .hd span{color:rgb(214, 214, 214);font-size:0.85em;margin-top:3px;}
 .blog-posts article p{padding:20px;color:#000}
 .blog-posts h3{font-weight:bold;color:#fff;}
-
-.view-cmts{background: rgb(204, 220, 229);border-radius: 5px;padding:10px 20px;}
+.blog-posts .cmtcnt{display:block;text-align: right;font-size:0.8em;color:rgb(123, 123, 123);padding:0 10px 5px;}
+.view-cmts{background: rgb(204, 220, 229);border-radius: 5px;padding:10px 20px 15px;}
 .view-cmts h4{font-weight:bold;margin-bottom:5px;}
 .view-cmts .cmt{position:relative;background:var(--main-bg-color);padding:10px 10px 8px;border-radius:4px;margin-bottom:10px;}
 .view-cmts .cmt span{display:block;text-align:right;font-size:0.85em;color:rgb(124, 137, 145)}
-
-.create-cmt form{display: flex;width:100%;justify-content: flex-end;}
+.view-cmts .cmt span a{margin-right:3px;}
+.create-cmt form{display: flex;width:100%;justify-content: flex-end;padding:0}
 .create-cmt label{width:18%;text-align: right;padding:5px;color:rgb(81, 81, 81);font-size:0.9em;}
 .create-cmt textarea{width:60%;}
 .create-cmt button{width:20%;margin-left:5px;}

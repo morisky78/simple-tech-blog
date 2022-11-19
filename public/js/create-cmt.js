@@ -21,3 +21,19 @@ createForm.addEventListener("submit", e=>{
     })
 })
 
+const delCmtButtons = document.querySelectorAll(".cmt-del-btn");
+delCmtButtons.forEach(delBtn=>{
+    delBtn.addEventListener("click",e=>{
+        const cmtId = e.target.getAttribute("data-cmtid")
+
+        fetch(`/api/comments/${cmtId}`,{
+            method:"DELETE"
+        }).then(res=>{
+            if(res.ok){
+                location.reload();
+            } else {
+                alert("Error deleting a comment")
+            }
+        })
+    })
+})

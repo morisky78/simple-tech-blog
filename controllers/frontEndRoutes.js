@@ -9,7 +9,10 @@ router.get("/",(req,res)=>{
         include:[{
             model:User,
             attributes:['username'],
-        }],
+        },{
+            model:Comment,
+            attributes:['id'],
+        }]
         
     }).then(allpost=>{
 
@@ -116,6 +119,8 @@ router.get('/post/:id', async (req, res) => {
       postHbsData.logged_in=req.session.logged_in;
       postHbsData.username=req.session.username;
       postHbsData.Comments.map(cmt=>cmt.date = moment(cmt.createdAt).format('MM/DD/YYYY'));
+      // for each comment, check if it is my comment. in order to show 'update' 'delete' button
+      postHbsData.Comments.map(cmt=>cmt.myComment = ( cmt.UserId == req.session.user_id ? true : false));
 
       console.log(postHbsData);
       res.render('post', postHbsData);

@@ -14,7 +14,12 @@
     {{#each Comments}}
     <div class="cmt">
         <p>{{content}}</p>
-        <span>{{User.username}}, {{date}}</span>
+        <span>
+            {{#if myComment}}
+            <a href="##" class="cmt-upd-btn" data-cmtid="{{id}}">Update</a>
+            <a href="##" class="cmt-del-btn" data-cmtid="{{id}}">Delete</a>
+            {{/if}}    
+            {{User.username}}, {{date}}</span>
     </div>
     {{/each}}
 
