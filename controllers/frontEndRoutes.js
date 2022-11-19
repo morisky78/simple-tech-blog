@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {User,Post,Comment} = require('../models');
-const moment = require('moment-timezone');
+const moment = require('moment');
 
 router.get("/",(req,res)=>{
 
@@ -15,7 +15,7 @@ router.get("/",(req,res)=>{
 
         const postsHbsData = allpost.map(post=>post.get({plain:true}))
         // update the date format
-        const postsdata = postsHbsData.map(post=>post.date = moment(post.createdAt).format('MM/DD/YYYY'));
+        postsHbsData.map(post=>post.date = moment(post.createdAt).format('MM/DD/YYYY'));
 
         console.log(postsHbsData);
         res.render("home", {
@@ -53,7 +53,8 @@ router.get("/dashboard",(req,res)=>{
     }).then(userData=>{
         const hbsData = userData.toJSON();
         console.log(hbsData)
-        hbsData.logged_in=req.session.logged_in
+        hbsData.logged_in=req.session.logged_in;
+        
         res.render("dashboard",hbsData)
     })
 })
@@ -77,6 +78,12 @@ router.get('/post/:id', async (req, res) => {
           },
           {
             model: Comment,
+            include: [
+                {
+                    model:User,
+                    attributes: ['username'],
+                }
+            ]
           },
         ],
       });
@@ -84,6 +91,8 @@ router.get('/post/:id', async (req, res) => {
       const postHbsData = postData.toJSON();
       // update the date format
       postHbsData.date = moment(postHbsData.updatedAt).format('MM/DD/YYYY') ;
+      postHbsData.logged_in=req.session.logged_in;
+      postHbsData.Comments.map(cmt=>cmt.date = moment(cmt.createdAt).format('MM/DD/YYYY'));
 
       console.log(postHbsData);
       res.render('post', postHbsData);
