@@ -1,28 +1,86 @@
 :root {
     --border-radius-sm:10px;
+    --main-bg-color:rgb(237, 246, 253);
+    --border-color:rgb(76, 71, 71);
+}
+body{
+    background:#000;
+    padding:10px;
 }
 .container{
     width:90%;
     margin:0 auto;
-    max-width: 1260px;   
+    max-width: 980px;
 }
+
 header{
-    background-color:pink
+    background-color:rgba(196, 196, 196, 0.92);
+    border-radius: 10px;
+    border-bottom-left-radius: 0;border-bottom-right-radius: 0;  
 }
 main{
-    background-color:rgb(237, 246, 253);
-    padding:10px 20px 30px;
+    background-color:var(--main-bg-color);
+    padding:35px 45px 55px;
 }
-header h1{font-weight:bold;font-size:2em;}
-header nav ul{display:flex;justify-content: flex-end;}
+header h1{font-weight:bold;font-size:2em;padding:20px 0 8px 20px;}
+header nav{display:flex;justify-content: flex-end;padding-bottom:5px;}
+header nav ul{display:flex;justify-content: flex-end;padding-right:15px;}
 header li{margin-left:10px;}
-.box-container{
-    border:2px solid rgb(43, 43, 90);
-}
-.box-container h2{background-color:var()}
+header li a{text-decoration: none;display:inline-block;padding:5px 10px;font-weight:bold;font-size:1.1em;background-color:var(--main-bg-color);border-radius: 4px;}
+header nav p{padding:5px;font-size:1.1em;}
 
-.blog-posts{padding:25px;}
-.blog-posts article{border:1px solid #ccc;border-radius:var(--border-radius-sm);margin-bottom:25px}
+
+.blog-posts article{border:1px solid var(--border-color);border-radius:var(--border-radius-sm);margin-bottom:25px}
+
 .blog-posts article a{text-decoration: none;}
-.blog-posts .hd{background:#ccc;padding:8px 20px;display:flex;justify-content: space-between;border-radius: var(--border-radius-sm);border-bottom-left-radius: 0;border-bottom-right-radius: 0}
-.blog-posts p{padding:20px;}
+.blog-posts .hd{background: var(--border-color);padding:8px 20px;display:flex;justify-content: space-between;border-radius: 9px;border-bottom-left-radius: 0;border-bottom-right-radius: 0}
+.blog-posts .hd span{color:rgb(214, 214, 214);font-size:0.8em;margin-top:3px;}
+.blog-posts article p{padding:20px;color:#000}
+.blog-posts h3{font-weight:bold;color:#fff;}
+
+.view-cmts{background: rgb(204, 220, 229);border-radius: 5px;padding:10px 20px;}
+.view-cmts h4{font-weight:bold;margin-bottom:5px;}
+.view-cmts .cmt{position:relative;background:var(--main-bg-color);padding:10px 10px 8px;border-radius:4px;margin-bottom:10px;}
+.view-cmts .cmt span{display:block;text-align:right;font-size:0.85em;color:rgb(124, 137, 145)}
+
+.create-cmt form{display: flex;width:100%;justify-content: flex-end;}
+.create-cmt label{width:18%;text-align: right;padding:5px;color:rgb(81, 81, 81);font-size:0.9em;}
+.create-cmt textarea{width:60%;}
+.create-cmt button{width:20%;margin-left:5px;}
+.create-cmt p{text-align: center;color:rgb(81, 81, 81);font-size:0.9em;padding:10px 0;}
+
+.dashboard ul{padding: 18px 25px 0px;}
+.dashboard li{margin-bottom:12px;}
+.dashboard li a{display: flex;justify-content: space-between;padding:10px 15px;text-decoration: none;background: rgb(204, 220, 229);border-radius:8px;}
+.dashboard li a:hover{background: rgb(184, 211, 227);}
+.dashboard li strong{color:#000;}
+.dashboard li span{font-size:0.85em;color:rgb(124, 137, 145)}
+
+.buttons{text-align:center;padding-top:10px;margin-bottom:5px;}
+.buttons a, .buttons button{display:inline-block;margin:0 auto;background:var(--border-color);color:#fff;text-decoration: none;padding:10px 20px;border-radius: 5px;border:none;line-height:20px;}
+
+form{padding:18px 25px;}
+form section{display:flex;margin-bottom:10px;flex-direction: column;}
+form label{padding:0 0 5px 5px;font-weight:bold;font-size: 0.95em;text-align: left;}
+form input,form textarea{width:100%;padding:5px;border:1px solid var(--border-color);border-radius: 5px;}
+
+.box-container{border:1px solid var(--border-color);border-radius:var(--border-radius-sm);padding-bottom:10px}
+.box-container h2{background: var(--border-color);padding:8px 20px;display:flex;justify-content: space-between;border-radius: 9px;border-bottom-left-radius: 0;border-bottom-right-radius: 0;font-weight:bold;color:#fff;}
+
+.login-box{width:60%;margin:0 auto;text-align: center;}
+
+/* Large smartphones */
+@media screen and (max-width: 768px) {
+    .create-cmt form{flex-wrap: wrap;}
+    .create-cmt label{width:100%;}
+    .create-cmt textarea{width:80%;}
+    .create-cmt button{width:20%;margin:0;}   
+    main{padding:25px 30px 45px;}
+    .login-box{width:100%;}
+}
+  
+/* Small smartphones  */
+@media screen and (max-width: 576px) {
+
+}
+  

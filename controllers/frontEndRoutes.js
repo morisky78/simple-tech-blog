@@ -21,7 +21,7 @@ router.get("/",(req,res)=>{
         res.render("home", {
             posts: postsHbsData,
             logged_in: req.session.logged_in,
-            username: req.session.username
+            username: req.session.username,
         })
 
     })
@@ -54,9 +54,9 @@ router.get("/dashboard",(req,res)=>{
         include:[Post]
     }).then(userData=>{
         const hbsData = userData.toJSON();
-        console.log(hbsData)
         hbsData.logged_in=req.session.logged_in;
-        
+        hbsData.Posts.map(post=>post.date = moment(post.createdAt).format('MM/DD/YYYY'));
+        console.log(hbsData.Posts)
         res.render("dashboard",hbsData)
     })
 })

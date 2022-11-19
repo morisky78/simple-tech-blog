@@ -1,12 +1,16 @@
-<h2>Your Dashboard</h2>
+<div class="dashboard box-container">
+    <h2>Your Dashboard</h2>
 
-<ul>
-    {{#each Posts}}
-    <li><a href="/edit-post/{{id}}">{{title}} </a><span>5/8/2020</span></li>
-    {{/each}}
-</ul>
+    <ul>
+        {{#each Posts}}
+        <li><a href="/edit-post/{{id}}"><strong>{{title}}</strong> 
+        <span>{{date}}</span></a></li>
+        {{/each}}
+    </ul>
 
-
-<a href="/create-post" id="newPostBtn">+ New Post</a>
+    <div class="buttons">
+        <a href="/create-post" id="newPostBtn">+ New Post</a>
+    </div>
+</div>
 
 <script src="/js/dashboard.js"></script>
