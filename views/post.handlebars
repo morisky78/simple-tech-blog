@@ -16,15 +16,18 @@
     </div>
     {{/each}}
 </section>
+</div>
 
-{{#if logged_in}}
+
 <div class="create-cmt">
+    {{#if logged_in}}
     <form id="create-cmt" data-postid="{{id}}">
         <label for="new-comment">Comment</label>
         <textarea id="new-comment"></textarea>
         <button>Submit</button>
     </form>
+    <script src="/js/create-cmt.js"></script>
+    {{else}}
+    <p>Please log in to leave a comment.</p>
+    {{/if}}
 </div>
-</div>
-<script src="/js/create-cmt.js"></script>
-{{/if}}

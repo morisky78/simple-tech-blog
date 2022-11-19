@@ -66,6 +66,22 @@ router.get("/create-post",(req,res)=>{
     res.render("createpost")
 })
 
+router.get("/edit-post/:id",(req,res)=>{
+    if(!req.session.logged_in){
+        return res.redirect("/login")
+    }
+
+    Post.findByPk(req.params.id)
+    .then(postData=>{
+        const hbsData = postData.toJSON();
+        console.log(hbsData)
+        hbsData.logged_in=req.session.logged_in
+        res.render("createpost",hbsData)
+    })
+
+})
+
+
 
 // GET one post
 router.get('/post/:id', async (req, res) => {
