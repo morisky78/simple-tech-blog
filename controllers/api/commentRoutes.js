@@ -19,6 +19,28 @@ router.delete('/:id', (req, res) => {
   
   });
 
+router.put('/:id', (req, res) => {
+    if(!req.session.logged_in){
+      return res.status(401).json({msg:"login first!"})
+    }
+    Comment.update(
+        {
+            content:req.body.comment,
+        },
+        {
+            where: {
+            id: req.params.id,
+            UserId: req.session.user_id,
+            }
+        })
+    .then(updateddata=>{
+        res.status(200).json(updateddata)
+    }).catch(err=>{
+        res.status(500).json({msg:"an error occurred",err})
+    })
+  
+});
+
 router.post("/",(req,res)=>{
     if(!req.session.user_id){
         return res.status(403).json({msg:"login first!"})

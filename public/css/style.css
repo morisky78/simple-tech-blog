@@ -43,9 +43,13 @@ header nav p{padding:5px;font-size:1.1em;}
 .view-cmts .cmt{position:relative;background:var(--main-bg-color);padding:10px 10px 8px;border-radius:4px;margin-bottom:10px;}
 .view-cmts .cmt span{display:block;text-align:right;font-size:0.85em;color:rgb(124, 137, 145)}
 .view-cmts .cmt span a{margin-right:3px;}
-.create-cmt form{display: flex;width:100%;justify-content: flex-end;padding:0}
+.view-cmts .cmt form{padding:5px 0;display: flex;}
+.view-cmts .cmt form input{width:80%;margin-right:5px;}
+.view-cmts .cmt form button{width:15%;}
+
+.create-cmt form{display: flex;width:100%;justify-content: flex-end;padding:5px 0;}
 .create-cmt label{width:18%;text-align: right;padding:5px;color:rgb(81, 81, 81);font-size:0.9em;}
-.create-cmt textarea{width:60%;}
+.create-cmt input{width:60%;}
 .create-cmt button{width:20%;margin-left:5px;}
 .create-cmt p{text-align: center;color:rgb(81, 81, 81);font-size:0.9em;padding:10px 0;}
 
@@ -73,7 +77,7 @@ form input,form textarea{width:100%;padding:5px;border:1px solid var(--border-co
 @media screen and (max-width: 768px) {
     .create-cmt form{flex-wrap: wrap;}
     .create-cmt label{width:100%;}
-    .create-cmt textarea{width:80%;}
+    .create-cmt input{width:80%;}
     .create-cmt button{width:20%;margin:0;}   
     main{padding:25px 30px 45px;}
     .login-box{width:100%;}

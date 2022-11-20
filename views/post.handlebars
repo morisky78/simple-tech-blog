@@ -19,7 +19,16 @@
             <a href="##" class="cmt-upd-btn" data-cmtid="{{id}}">Update</a>
             <a href="##" class="cmt-del-btn" data-cmtid="{{id}}">Delete</a>
             {{/if}}    
-            {{User.username}}, {{date}}</span>
+            {{User.username}}, {{date}}
+        </span>
+
+        {{#if myComment}}
+        <form id="update-cmt-form-{{id}}" data-cmtid="{{id}}" class="cmt-update-form" style="display:none;">
+            <input type="text" id="update-comment-{{id}}" value="{{content}}" />
+            <button>Update</button>
+        </form>
+        {{/if}} 
+
     </div>
     {{/each}}
 
@@ -27,7 +36,7 @@
         {{#if logged_in}}
         <form id="create-cmt" data-postid="{{id}}">
             <label for="new-comment">Add a comment:</label>
-            <textarea id="new-comment"></textarea>
+            <input type="text" id="new-comment"/>
             <button>Submit</button>
         </form>
         <script src="/js/create-cmt.js"></script>
