@@ -12,7 +12,10 @@ router.get("/",(req,res)=>{
         },{
             model:Comment,
             attributes:['id'],
-        }]
+        }],
+        order: [
+          ['createdAt', 'DESC'],
+        ],
         
     }).then(allpost=>{
 
