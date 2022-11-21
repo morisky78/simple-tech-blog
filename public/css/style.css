@@ -90,7 +90,7 @@ form input,form textarea{width:100%;padding:5px;border:1px solid var(--border-co
     .view-cmts .cmt form{flex-direction: column;}
     .view-cmts .cmt form input{width:100%;}
     .view-cmts .cmt form button{width:100%;}
-
+    .blog-posts article{margin-bottom:15px;}
 }
   
   
