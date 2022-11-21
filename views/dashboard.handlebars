@@ -5,6 +5,8 @@
         {{#each Posts}}
         <li><a href="/edit-post/{{id}}"><strong>{{title}}</strong> 
         <span>{{date}}</span></a></li>
+        {{else}}
+        <li class="nodata">You haven't posted any article yet.</li>
         {{/each}}
     </ul>
 
