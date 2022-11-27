@@ -27,8 +27,8 @@ When there is no blog posting, pages will be as shown below. Users can choose ei
 The homepage presents existing blog posts, latest first.  
 When we click a blog, users can see details of the blog posting and comments.  
 When user is logged in, they can leave a comment and **update/delete their own comment** on this page.  
-<img src="public/images/ss05-home.png" height="280" alt="Screenshot of homepage"> 
-<img src="public/images/ss06-posting.png" height="280" alt="Screenshot of blog posting details page"> 
+<img src="public/images/ss05-home.png" height="290" alt="Screenshot of homepage"> 
+<img src="public/images/ss06-posting.png" height="290" alt="Screenshot of blog posting details page"> 
 
 ### Dashboard
 On the dashboard page, users can see any own blog post listing. Users can create a new posting, and edit/delete an existing blog.  
