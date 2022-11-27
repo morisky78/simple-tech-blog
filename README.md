@@ -18,7 +18,7 @@ https://mo-tech-blog.herokuapp.com/
 https://github.com/morisky78/simple-tech-blog
 
 ### Initial pages, login, signup page.
-When there is no blog posting, pages will are as shown below:  
+When there is no blog posting, pages will be as shown below. Users can choose either login or signup.   
 <img src="public/images/ss01.png" height="150" alt="Screenshot of no posting initial page">
 <img src="public/images/ss02.png" height="180" alt="Screenshot of login"> 
 <img src="public/images/ss03_signup.png" height="180" alt="Screenshot of signup"> 
