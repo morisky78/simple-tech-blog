@@ -19,9 +19,9 @@ https://github.com/morisky78/simple-tech-blog
 
 ### Initial pages, login, signup page.
 When there is no blog posting, pages will be as shown below. Users can choose either login or signup.   
-<img src="public/images/ss01.png" height="150" alt="Screenshot of no posting initial page">
-<img src="public/images/ss02.png" height="180" alt="Screenshot of login"> 
-<img src="public/images/ss03_signup.png" height="180" alt="Screenshot of signup"> 
+<img src="public/images/ss01-1.png" height="180" alt="Screenshot of no posting initial page">
+<img src="public/images/ss02.png" height="240" alt="Screenshot of login"> 
+
 
 ### Homepage
 The homepage presents existing blog posts, latest first.  
