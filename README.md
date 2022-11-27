@@ -3,12 +3,6 @@
 ## Description
 This web application is a CMS-style blog site, where developers can pushlish their blog posts and comment on other developers posts. This app follows the MVC(Model-View-Contoroller) paradigm in its architectual structure, using Handlebars.js, Sequelize, and the express-session npm package for authentication.
 
-## Table of Contents
-
-- [Usage](#usage)
-- [Tests](#tests)
-- [Credit](#credit)
-- [Questions](#questions)
 
 ## Usage
 - The URL of the Deployed page:  
